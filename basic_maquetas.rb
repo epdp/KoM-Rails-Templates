@@ -10,8 +10,14 @@ run "rm app/controllers/maquetas_controller.rb"
 file 'app/controllers/maquetas_controller.rb', <<-CODE
 class MaquetasController < ApplicationController
   layout 'maquetas'
+  
+  def index
+    
+  end
 end
 CODE
+
+run "touch app/views/maquetas/index.html.erb"
 
 # generate application layout + maquetas layout
 file 'app/views/layouts/application.html.erb', <<-CODE
