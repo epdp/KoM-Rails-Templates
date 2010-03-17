@@ -3,13 +3,15 @@ run "mkdir app/views/common"
 run "touch app/views/common/_footer.html.erb"
 run "touch app/views/common/_header.html.erb"
 
+
+generate(:controller, "maquetas")
+run "rm app/controllers/maquetas_controller.rb"
 # generate maquetas controller
 file 'app/controllers/maquetas_controller.rb', <<-CODE
 class MaquetasController < ApplicationController
   layout 'maquetas'
 end
 CODE
-generate (:controller, "maquetas")
 
 # generate application layout + maquetas layout
 file 'app/views/layouts/application.html.erb', <<-CODE
