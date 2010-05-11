@@ -84,6 +84,35 @@ file 'app/views/layouts/maquetas.html.erb', <<-CODE
 </html>
 CODE
 
+file 'config/datavase.yml', <<-CODE
+  development:
+    adapter: mysql
+    database: project_development
+    username: root
+    password: root  
+    socket: /Applications/MAMP/tmp/mysql/mysql.sock
+    encoding: utf8
+
+  # Warning: The database defined as "test" will be erased and
+  # re-generated from your development database when you run "rake".
+  # Do not set this db to the same as development or production.
+  test:
+    adapter: sqlite3
+    database: db/test.sqlite3
+    pool: 5
+    timeout: 5000
+    
+  production:
+    adapter: mysql
+    encoding: utf8
+    reconnect: false
+    database: project_production
+    pool: 5
+    username: root
+    password: *********
+    socket: /var/run/mysqld/mysqld.sock
+CODE
+
 # Set up .gitignore files
   run "cp config/database.yml config/example_database.yml"
   run "touch tmp/.gitignore log/.gitignore vendor/.gitignore"
