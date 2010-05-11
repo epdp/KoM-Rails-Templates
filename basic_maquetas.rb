@@ -84,7 +84,7 @@ file 'app/views/layouts/maquetas.html.erb', <<-CODE
 </html>
 CODE
 
-file 'config/datavase.yml', <<-CODE
+file 'config/database.yml', <<-CODE
   development:
     adapter: mysql
     database: project_development
